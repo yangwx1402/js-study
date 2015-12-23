@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script>
+        function validate(){
+            var value = document.getElementById("demo").value;
+            if(value==""||isNaN(value)){
+                alert("只能输入数字")
+            }
+
+        }
+    </script>
+</head>
+<body>
+    <input id="demo" type="text"/>请输入数字
+    <button onclick="validate()">点击验证</button>
+</body>
+</html>
