@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script>
+        function domTreePrint(){
+            var element = document.getElementById("main");
+            var pArray = element.getElementsByTagName("p");
+            pArray[0].innerHTML="第一个P的内容被我修改了";
+        }
+    </script>
+</head>
+<body>
+   <p>dom树图</p>
+   <img src="domtree.gif">
+<div id="main">
+    <p>第一个p</p>
+    <p>第二个p</p>
+</div>
+<button onclick="domTreePrint()">点击</button>
+</body>
+</html>
