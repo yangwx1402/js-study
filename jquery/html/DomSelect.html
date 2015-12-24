@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="../js/jquery.js">
+    </script>
+    <script>
+        var click_num = 0;
+        function myFunction(){
+            if(click_num==0) {
+                //jquery选择器选择一个html标签
+                $("#h01").html("我把你改变了");
+                click_num++;
+            }else{
+                $("#h01").attr("style","color:red").html("我把你改变了");
+                click_num=0;
+            }
+        }
+        $(document).ready(myFunction())
+    </script>
+</head>
+<body>
+<h1 id="h01">哈哈</h1>
+<button onclick="myFunction()">点击</button>
+</body>
+</html>
