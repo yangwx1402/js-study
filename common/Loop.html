@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script>
+        var click_num = 0;
+        var array = new Array("1", "2", "3", "4", "5", "6", "7", "8");
+        function changeContent() {
+            var element = document.getElementById("demo");
+            var html = "";
+            if (click_num == 0) {
+                for (var i = 0; i < array.length; i++) {
+                    html += array[i];
+                }
+                click_num++;
+            } else if (click_num == 1) {
+                for (var x in array) {
+                    html += x;
+                }
+                click_num++;
+            } else if (click_num == 2) {
+                html = "哈哈"
+                click_num = 0;
+            }
+            element.innerHTML = html;
+        }
+    </script>
+</head>
+<body>
+<p id="demo">哈哈</p>
+<button onclick="changeContent();">点击</button>
+</body>
+</html>
