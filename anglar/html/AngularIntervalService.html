@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="http://apps.bdimg.com/libs/angular.js/1.3.9/angular.min.js"></script>
+</head>
+<body>
+<div ng-app="interval-service" ng-controller="interval-controller">
+    <p>现在的时间是:{{time}},length是{{length}}</p>
+</div>
+   <script>
+       var app = angular.module('interval-service',[]);
+       app.controller('interval-controller',function($scope,$interval,DefinedService){
+           $scope.time = new Date().toLocaleString();
+           $scope.length = DefinedService.toLength($scope.time);
+           $interval(function(){
+               $scope.time = new Date().toLocaleString();
+               $scope.length = DefinedService.toLength($scope.time);
+           },1000);
+       });
+       //自定义service
+       app.service('DefinedService',function(){
+           this.toLength=function(string){
+               return string.length;
+           }
+       });
+   </script>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="http://apps.bdimg.com/libs/angular.js/1.3.9/angular.min.js"></script>
+</head>
+<body>
+    <div ng-app="timeout-service" ng-controller="timeout-service-controller">
+        <h1>{{hello}}</h1>
+    </div>
+    <script>
+        var app = angular.module('timeout-service',[]);
+        app.controller('timeout-service-controller',function($scope,$timeout){
+            $scope.hello = "helloworld";
+            $timeout(function(){
+                $scope.hello="haha 你超时了";
+            },2000);
+        });
+    </script>
+</body>
+</html>

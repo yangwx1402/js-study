@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="http://apps.bdimg.com/libs/angular.js/1.3.9/angular.min.js"></script>
+</head>
+<body>
+   <div ng-app="http-service" ng-controller="http-service-controller">
+       welcome:{{data}}
+   </div>
+   <script>
+       var app = angular.module('http-service',[]);
+       app.controller('http-service-controller',function($scope,$http){
+           //这里就会涉及到跨域的问题
+           $http.get('../data/ArrayData.jsonqq').then(function(response){
+               console.log(response.data);
+               $scope.data = response.data
+           },function(response){
+               $scope.data = "error";
+           });
+       });
+   </script>
+</body>
+</html>
